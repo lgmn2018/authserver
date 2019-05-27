@@ -98,8 +98,8 @@
 
         <dependency>
             <groupId>com.lgmn</groupId>
-            <artifactId>user-api</artifactId>
-            <version>0.0.1</version>
+            <artifactId>user-services-api</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

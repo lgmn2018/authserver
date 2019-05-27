@@ -2,9 +2,9 @@ package com.lgmn.authserver.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.lgmn.common.domain.LgmnUserInfo;
-import com.lgmn.user.api.dto.*;
-import com.lgmn.user.api.entity.*;
-import com.lgmn.user.api.service.*;
+import com.lgmn.userservices.api.dto.*;
+import com.lgmn.userservices.api.entity.*;
+import com.lgmn.userservices.api.service.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -40,7 +40,6 @@ public class MyUserDetailService implements UserDetailsService {
     @Reference(version = "${demo.service.version}")
     private LgmnRoleEntityService roleEntityService;
 
-    @Reference(version = "${demo.service.version}")
     private LgmnUserRoleEntityService userRoleEntityService;
 
     @Reference(version = "${demo.service.version}")
@@ -48,6 +47,7 @@ public class MyUserDetailService implements UserDetailsService {
 
     @Reference(version = "${demo.service.version}")
     private LgmnRolePermissionEntityService rolePermissionEntityService;
+    @Reference(version = "${demo.service.version}")
 
     @Override
     public UserDetails loadUserByUsername(String memberName) throws UsernameNotFoundException {
