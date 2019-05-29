@@ -40,6 +40,7 @@ public class MyUserDetailService implements UserDetailsService {
     @Reference(version = "${demo.service.version}")
     private LgmnRoleEntityService roleEntityService;
 
+    @Reference(version = "${demo.service.version}")
     private LgmnUserRoleEntityService userRoleEntityService;
 
     @Reference(version = "${demo.service.version}")
@@ -47,7 +48,6 @@ public class MyUserDetailService implements UserDetailsService {
 
     @Reference(version = "${demo.service.version}")
     private LgmnRolePermissionEntityService rolePermissionEntityService;
-    @Reference(version = "${demo.service.version}")
 
     @Override
     public UserDetails loadUserByUsername(String memberName) throws UsernameNotFoundException {

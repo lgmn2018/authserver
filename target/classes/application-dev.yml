@@ -66,8 +66,6 @@ dubbo:
   registry:
     id: lgmn-authserver-provider-registry
     address: nacos://127.0.0.1:8848
-  scan:
-    base-packages: com.lgmn.authserver.service
   application:
     id: lgmn-authserver-provider
     name: lgmn-authserver-provider
