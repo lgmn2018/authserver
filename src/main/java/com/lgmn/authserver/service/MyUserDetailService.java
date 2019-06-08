@@ -2,9 +2,9 @@ package com.lgmn.authserver.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.lgmn.common.domain.LgmnUserInfo;
-import com.lgmn.userservices.api.dto.*;
-import com.lgmn.userservices.api.entity.*;
-import com.lgmn.userservices.api.service.*;
+import com.lgmn.userservices.basic.dto.*;
+import com.lgmn.userservices.basic.entity.*;
+import com.lgmn.userservices.basic.service.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
