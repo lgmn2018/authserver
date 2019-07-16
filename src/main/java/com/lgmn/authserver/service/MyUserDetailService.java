@@ -35,19 +35,19 @@ import java.util.Set;
 public class MyUserDetailService implements UserDetailsService {
 
     @Reference(version = "${demo.service.version}")
-    private LgmnUserEntityService userEntityService;
+    private LgmnUserService userEntityService;
 
     @Reference(version = "${demo.service.version}")
-    private LgmnRoleEntityService roleEntityService;
+    private LgmnRoleService roleEntityService;
 
     @Reference(version = "${demo.service.version}")
-    private LgmnUserRoleEntityService userRoleEntityService;
+    private LgmnUserRoleService userRoleEntityService;
 
     @Reference(version = "${demo.service.version}")
-    private LgmnPermissionEntityService permissionEntityService;
+    private LgmnPermissionService permissionEntityService;
 
     @Reference(version = "${demo.service.version}")
-    private LgmnRolePermissionEntityService rolePermissionEntityService;
+    private LgmnRolePermissionService rolePermissionEntityService;
 
     @Override
     public UserDetails loadUserByUsername(String memberName) throws UsernameNotFoundException {
