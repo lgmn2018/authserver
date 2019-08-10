@@ -17,7 +17,7 @@ spring:
     time-zone: GMT+8
   redis:
     database: 0
-    host: 182.254.233.93
+    host: 192.168.1.120
     port: 6379
     password: 123456
     jedis:
