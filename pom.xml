@@ -15,6 +15,7 @@
     <version>1.0</version>
 
     <properties>
+        <lgmn-common.version>1.0.2</lgmn-common.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -131,6 +132,73 @@
                 <configuration>
                     <skip>true</skip>
                 </configuration>
+            </plugin>
+
+            <!-- 配置 docker 镜像 -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>1.8.0</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:alpine</image>
+                    </from>
+                    <to>
+                        <image>docker.io/xiejibiao/authserver</image>
+                        <tags>
+                            <tag>v1.0.0</tag>
+                        </tags>
+                        <auth>
+                            <username>xiejibiao</username>
+                            <password>18038829596xjb</password>
+                        </auth>
+                    </to>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>1.8.0</version>
+                <configuration>
+                    <from>
+                        <image>gmaslowski/jdk:8</image>
+                    </from>
+                    <to>
+                        <image>docker.io/xiejibiao/authserver</image>
+                        <tags>
+                            <tag>v1.0.0</tag>
+                        </tags>
+                    </to>
+                    <container>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+
+                        <jvmFlags>
+                            <jvmFlag>-Dfile.encoding=UTF-8</jvmFlag>
+                            <jvmFlag>-Dspring.profiles.active=prod</jvmFlag>
+                        </jvmFlags>
+                        <ports>
+                            <port>8088</port>
+                        </ports>
+                    </container>
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                </configuration>
+                <!--<executions>-->
+                <!--<execution>-->
+                <!--<phase>package</phase>-->
+                <!--<goals>-->
+                <!--<goal>build</goal>-->
+                <!--</goals>-->
+                <!--</execution>-->
+                <!--</executions>-->
             </plugin>
         </plugins>
         <filters>
